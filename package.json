@@ -1,0 +1,26 @@
+{
+  "name": "city-explorer-api",
+  "version": "1.0.0",
+  "description": "app will provide data for the City Explorer front-end application. This means users will get to see not only the map, but also interesting information about the area, provided by a variety of third-party APIs that your server will manage.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/villafanam/city-explorer-api.git"
+  },
+  "author": "Marco Villafana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/villafanam/city-explorer-api/issues"
+  },
+  "homepage": "https://github.com/villafanam/city-explorer-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "epress": "^0.0.1-security",
+    "nodemon": "^2.0.20"
+  }
+}
