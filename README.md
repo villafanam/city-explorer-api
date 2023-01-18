@@ -43,8 +43,8 @@ Estimate of time needed to complete: 3 hr
 
 Start time: 2:00 PM
 
-Finish time: _____
+Finish time: 10:00
 
-Actual time needed to complete: _____
+Actual time needed to complete: 8 hr
 
 ![city-explorer domain](./images/city-explorer-domain.jpg)
