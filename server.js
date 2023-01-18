@@ -4,9 +4,10 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
+const axios = require('axios');
 
 // *** FOR LAB DON'T FORGET TO REQUIRE YOUR STARTER JSON FILE ***
-let data = require('./data/weather.json');
+//let data = require('./data/weather.json');
 
 
 // **** Once express is in we need to use it - per express docs
@@ -33,17 +34,24 @@ app.get('/', (request, response) => {
   response.status(200).send('Welcome to my server');
 });
 
-app.get('/weather', (req,res,next)=>{
+app.get('/weather', async (req, res, next) => {
   try
   {
-    // let lat = req.query.lat;
-    // let lon = req.query.lon;
-    let searchQuery = req.query.searchQuery;
-    //let dataToGroom = data.find(element => element.lat === lat && element.lon === lon && element.city_name === searchQuery);
-    let dataToGroom = data.find(element => element.city_name.toUpperCase() === searchQuery.toUpperCase());
-    let dataToSend = dataToGroom.data.map(element => new Forcast(element));
+    // TODO: accept my queries
+    let lat = req.query.lat;
+    let lon = req.query.lon;
 
-    res.status(200).send(dataToSend);
+    // TODO: use those queries and build out an URL to hit the api
+    let url = `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHER_API_KEY}&lat=${lat}&lon=${lon}&days=5&units=I`;
+
+    let weatherData = await axios.get(url);
+    console.log(weatherData.data);
+
+    // TODO: groom that data
+    let groomData = weatherData.data.data.map(element => new Forcast(element));
+
+    // TODO: send that to the front end
+    res.status(200).send(groomData);
   }
   catch (error)
   {
