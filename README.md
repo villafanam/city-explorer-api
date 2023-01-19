@@ -48,7 +48,7 @@ Finish time: 10:00
 
 Actual time needed to complete: 8 hr
 
-<!-- ![city-explorer domain](./images/city-explorer-domain.jpg) -->
+![city-explorer domain](./images/city-explorer-domain.jpg)
 
 ## Lab 08
 
@@ -60,5 +60,18 @@ Start time: 1:30 PM
 Finish time: 7:30 PM
 
 Actual time needed to complete: 6 hr
+
+![city-explorer domain](./images/city-explorer-domain.jpg)
+
+## Lab 09
+
+Name of feature: 2
+Estimate of time needed to complete: 3 hr
+
+Start time: 2:00 PM
+
+Finish time:  PM
+
+Actual time needed to complete:  hr
 
 ![city-explorer domain](./images/city-explorer-domain.jpg)
