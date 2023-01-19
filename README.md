@@ -35,6 +35,7 @@
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
++ [weather icons](https://github.com/Makin-Things/weather-icons)
 
 ## Lab 07
 
@@ -47,7 +48,7 @@ Finish time: 10:00
 
 Actual time needed to complete: 8 hr
 
-![city-explorer domain](./images/city-explorer-domain.jpg)
+<!-- ![city-explorer domain](./images/city-explorer-domain.jpg) -->
 
 ## Lab 08
 
