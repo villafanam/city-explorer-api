@@ -75,3 +75,16 @@ Finish time: 6:10 PM
 Actual time needed to complete: 4 hr
 
 ![city-explorer domain](./images/city-explorer-domain.jpg)
+
+## Lab 10
+
+Name of feature: 1
+Estimate of time needed to complete: 2 hr
+
+Start time: 1:30 PM
+
+Finish time: 3:30 PM
+
+Actual time needed to complete: 2 hr
+
+![city-explorer domain](./images/city-explorer-domain-2.jpg)
