@@ -3,7 +3,7 @@
 const axios = require('axios');
 
 let weatherImg = (weather) => {
-  console.log(`weather code: ${weather.weather.code}`)
+  //console.log(`weather code: ${weather.weather.code}`);
   if(weather.weather.code >= 300 && weather.weather.code <= 522)
   {
     return 'https://raw.githubusercontent.com/Makin-Things/weather-icons/master/animated/rainy-3-day.svg';
@@ -46,7 +46,7 @@ async function getWeather (req, res, next)
     let url = `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHER_API_KEY}&lat=${lat}&lon=${lon}&days=5&units=I`;
 
     let weatherData = await axios.get(url);
-    console.log(weatherData.data);
+    //console.log(weatherData.data);
 
     // TODO: groom that data
     let groomData = weatherData.data.data.map(element => new Forcast(element,weatherImg(element)));
