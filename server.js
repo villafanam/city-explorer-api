@@ -1,44 +1,30 @@
 'use strict';
 
-// **** REQUIRES ****
-const express = require('express');
 require('dotenv').config();
+const express = require('express');
 const cors = require('cors');
-const getWeather = require('./modules/weather.js');
+
+const weather = require('./modules/weather.js');
 const getMoives = require('./modules/movies.js');
 
-// *** FOR LAB DON'T FORGET TO REQUIRE YOUR STARTER JSON FILE ***
-//let data = require('./data/weather.json');
-
-
-// **** Once express is in we need to use it - per express docs
-// *** app === server
 const app = express();
-
-// **** MIDDLEWARE ****
-// *** cors is middleware - security guard that allows us to share resources across the internet **
 app.use(cors());
 
 // *** DEFINE A PORT FOR MY SERVER TO RUN ON ***
 const PORT = process.env.PORT || 3002;
 
-
-// **** ENDPOINTS ****
-
-// *** Base endpoint - proof of life
-// ** 1st arg - endpoint in quotes
-// ** 2nd arg - callback which will execute when someone hits that point
-
-// *** Callback function - 2 parameters: request, response (req,res)
-
-app.get('/', (request, response) => {
-  response.status(200).send('Welcome to my server');
-});
-
-app.get('/weather', getWeather);
-
+app.get('/weather', weatherHandler);
 app.get('/movie', getMoives);
 
+function weatherHandler(request, response) {
+  const { lat, lon } = request.query;
+  weather(lat, lon)
+    .then(summaries => response.send(summaries))
+    .catch((error) => {
+      console.error(error);
+      response.status(200).send('Sorry. Something went wrong!');
+    });
+}
 
 // **** CATCH ALL ENDPOINT - NEEDS TO BE YOUR LAST DEFINED ENDPOINT ****
 app.get('*', (request, response) => {
@@ -52,5 +38,4 @@ app.use((error, request, response, next) => {
 });
 
 
-// ***** SERVER START ******
-app.listen(PORT, () => console.log(`We are running on port: ${PORT}`));
+app.listen(PORT, () => console.log(`Server up on ${process.env.PORT}`));
